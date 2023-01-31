@@ -148,4 +148,8 @@ Modify paragraph/package.json
   "module": "dist/paragraph.esm.js",
   "src": "lib/paragraph.js",
 
-  $ vi paragraph/docs/paragraph.stories.js
+$ vi paragraph/docs/paragraph.stories.js
+
+$ mv {button,text,gallery} components 
+
+$ lerna bootstrap
