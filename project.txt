@@ -116,4 +116,6 @@ $ lerna add http-server --dev --scope=react-tallymate
 
 $ lerna run deploy:build --scope=react-tallymate
 
+$ lerna add @glassball/gallery --scope=react-tallymate
+
 
