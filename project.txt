@@ -80,3 +80,40 @@ lerna add rollup-plugin-postcss --scope=@glassball/builder-rollup
 .storybook/main.js
       // This is where we change the order of resolution of main fields
     config.resolve.mainFields = ['src', 'module', 'main'];
+
+packages/builder-rollup/lib/builder-rollup.js
+
+# Setting up a create-react-app using lerna
+# https://medium.com/geekculture/setting-up-monorepo-with-create-react-app-cb2cfa763b96
+
+packages/ $ mkdir apps
+packages/ $ cd apps 
+apps/ $ npx create-react-app react-tallymate
+
+cd react-tallymate
+react-tallymate/ $ rm -rf node_modules 
+
+react-tallymate/ $ cd ../../../
+react-monorepo/ $ lerna bootstrap
+
+$ vi lerna.json
+{
+  "packages": [
+    "packages/*",
+    "packages/apps/*"
+  ],
+:
+}
+
+$ lerna run start --scope=react-tallymate
+$ lerna run build  --scope=react-tallymate
+
+$ lerna add http-server --dev --scope=react-tallymate
+  "scripts": {
+:
+    "deploy:build": "http-server ./build"
+  },
+
+$ lerna run deploy:build --scope=react-tallymate
+
+
