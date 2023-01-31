@@ -100,7 +100,8 @@ $ vi lerna.json
 {
   "packages": [
     "packages/*",
-    "packages/apps/*"
+    "packages/apps/*",
+    "packages/compnents/*"
   ],
 :
 }
@@ -118,4 +119,33 @@ $ lerna run deploy:build --scope=react-tallymate
 
 $ lerna add @glassball/gallery --scope=react-tallymate
 
+# We will create the components folder and place our new components there
 
+
+lerna create @glassball/text --yes
+
+$ mkdir packages/components
+$ 
+
+$ lerna create @glassball/paragraph --yes
+
+$ mv packages/paragraph packages/components/ 
+
+lerna add @glassball/paragraph --scope=@glassball/gallery
+lerna add react --dev --scope '{@glassball/paragraph}'
+lerna add react@16.x --peer --scope '{@glassball/paragraph}'
+lerna add clsx --scope '{@glassball/paragraph}'
+
+lerna add @glassball/builder-rollup --dev --scope '{@glassball/paragraph}'
+
+package.json
+    "build": "builder-rollup",
+    "clean": "rm -rf dist",
+    "purge": "rm -rf node_modules",
+
+Modify paragraph/package.json
+  "main": "dist/paragraph.cjs.js",
+  "module": "dist/paragraph.esm.js",
+  "src": "lib/paragraph.js",
+
+  $ vi paragraph/docs/paragraph.stories.js

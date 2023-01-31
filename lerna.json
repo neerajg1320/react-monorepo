@@ -1,7 +1,8 @@
 {
   "packages": [
     "packages/*",
-    "packages/apps/*"
+    "packages/apps/*",
+    "packages/components/*"
   ],
   "version": "0.0.7",
   "hoist": true,
