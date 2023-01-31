@@ -38,8 +38,16 @@ lerna add @glassball/builder-rollup --dev --scope '{@glassball/gallery,@glassbal
 "build": "builder-rollup",
 
 lerna add rollup --scope=@glassball/builder-rollup
+lerna add postcss --scope=@glassball/builder-rollup
 lerna add @babel/core --scope=@glassball/builder-rollup
 lerna add @babel/preset-env --scope=@glassball/builder-rollup
 lerna add @babel/preset-react --scope=@glassball/builder-rollup
 lerna add @rollup/plugin-babel --scope=@glassball/builder-rollup
 lerna add @rollup/plugin-node-resolve --scope=@glassball/builder-rollup
+
+"clean": "rm -rf dist",
+"purge": "rm -rf node_modules",
+
+npx -p @storybook/cli sb init --type react
+npm install --save-dev react react-dom
+npm install --save-dev postcss
