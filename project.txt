@@ -36,3 +36,10 @@ chmod +x packages/builder-rollup/lib/builder-rollup.js
 lerna add @glassball/builder-rollup --dev --scope '{@glassball/gallery,@glassball/button,@glassball/text}'
 
 "build": "builder-rollup",
+
+lerna add rollup --scope=@glassball/builder-rollup
+lerna add @babel/core --scope=@glassball/builder-rollup
+lerna add @babel/preset-env --scope=@glassball/builder-rollup
+lerna add @babel/preset-react --scope=@glassball/builder-rollup
+lerna add @rollup/plugin-babel --scope=@glassball/builder-rollup
+lerna add @rollup/plugin-node-resolve --scope=@glassball/builder-rollup
