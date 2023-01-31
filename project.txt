@@ -58,4 +58,25 @@ $ npm install --save-dev gh-pages
 "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
 
 
+lerna add rollup-plugin-postcss --scope=@glassball/builder-rollup
 
+  "main": "dist/gallery.cjs.js",
+  "module": "dist/gallery.esm.js",
+  "src": "lib/gallery.js",
+
+  "main": "dist/button.cjs.js",
+  "module": "dist/button.esm.js",
+  "src": "lib/button.js",
+
+  "main": "dist/text.cjs.js",
+  "module": "dist/text.esm.js",
+  "src": "lib/text.js",
+
+  "files": [
+    "dist",
+    "lib"
+  ],
+
+.storybook/main.js
+      // This is where we change the order of resolution of main fields
+    config.resolve.mainFields = ['src', 'module', 'main'];
