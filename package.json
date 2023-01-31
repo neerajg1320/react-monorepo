@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "purge": "lerna run purge"
   },
   "devDependencies": {
     "lerna": "^6.4.1"
