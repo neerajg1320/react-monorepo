@@ -8,7 +8,8 @@
     "clean": "lerna run clean",
     "purge": "lerna run purge",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
+    "gh-pages": "^5.0.0",
     "lerna": "^6.4.1",
     "postcss": "^8.4.21",
     "react": "^18.2.0",

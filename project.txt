@@ -51,3 +51,11 @@ lerna add @rollup/plugin-node-resolve --scope=@glassball/builder-rollup
 npx -p @storybook/cli sb init --type react
 npm install --save-dev react react-dom
 npm install --save-dev postcss
+
+
+$ npm install --save-dev gh-pages
+
+"deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
+
+
+
