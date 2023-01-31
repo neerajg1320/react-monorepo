@@ -1,0 +1,38 @@
+mkdir react-monorepo
+cd rect-monorepe
+
+npm init -y
+lerna init
+
+$ vi lerna.json
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.0.0",
+  "hoist": true,
+  "stream": true,
+  "bootstrap": {
+    "npmClientArgs": ["--no-package-lock"]
+  }
+}
+
+lerna create @glassball/gallery --yes
+lerna create @glassball/button --yes
+lerna create @glassball/text --yes
+lerna create @glassball/builder-rollup --yes
+
+
+
+lerna add @glassball/button --scope=@glassball/gallery
+lerna add @glassball/text --scope=@glassball/gallery
+lerna add react --dev --scope '{@glassball/button,@glassball/text}'
+lerna add react@16.x --peer --scope '{@glassball/button,@glassball/text}'
+lerna add clsx --scope '{@glassball/button,@glassball/text}'
+
+
+chmod +x packages/builder-rollup/lib/builder-rollup.js
+
+lerna add @glassball/builder-rollup --dev --scope '{@glassball/gallery,@glassball/button,@glassball/text}'
+
+"build": "builder-rollup",
