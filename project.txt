@@ -153,3 +153,50 @@ $ vi paragraph/docs/paragraph.stories.js
 $ mv {button,text,gallery} components 
 
 $ lerna bootstrap
+
+## Add the tables package
+# This package will contain the Table related code.
+# Any changes to the table code will happen here in future!
+
+react-monorepo/ $ lerna create @glassball/table --yes
+$ mv packages/table packages/components
+$ lerna bootstrap
+$ lerna add @glassball/table --scope=react-tallymate
+
+# App.js
+
+import './App.css';
+import {TableWrapper} from "@glassball/table";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>App using gallery</h1>
+      <div>
+        <TableWrapper />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+$ lerna run start --scope=react-tallymate
+
+# We disabled the use of AppContext.
+# Whatever was being passed from AppContext we are now passing using props.
+
+lerna add react --dev --scope '{@glassball/table}'
+lerna add react@16.x --peer --scope '{@glassball/table}'
+lerna add clsx --scope '{@glassball/table}'
+
+lerna add @glassball/builder-rollup --dev --scope=@glassball/table
+
+  "scripts": {
+    "build": "builder-rollup",
+    "clean": "rm -rf dist",
+    "purge": "rm -rf node_modules",
+    :
+  }
+
+$ lerna run build --scope=@glassball/table
