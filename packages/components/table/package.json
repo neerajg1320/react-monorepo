@@ -5,6 +5,8 @@
   "keywords": [],
   "author": "Neeraj Gupta <neerajgupta.mbox@gmail.com>",
   "license": "ISC",
+  "main": "dist/table.cjs.js",
+  "module": "dist/table.esm.js",
   "src": "lib/table.js",
   "directories": {
     "lib": "lib",

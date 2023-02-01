@@ -4,9 +4,9 @@ import styles from './styles.css';
 
 const Table = ({ children, className, variant, ...rest }) => {
   const classes = cx(
-      styles.Paragraph,
+      styles.Table,
       {
-        [styles.ParagraphSecondary]: variant === 'secondary',
+        [styles.TableSecondary]: variant === 'secondary',
       },
       className
   );

@@ -118,8 +118,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".styles_Paragraph__aJTrO {\n    color: royalblue;\n}\n\n.styles_ParagraphSecondary__bZbkD {\n    color: rebeccapurple;\n}";
-var styles = {"Paragraph":"styles_Paragraph__aJTrO","ParagraphSecondary":"styles_ParagraphSecondary__bZbkD"};
+var css_248z = ".styles_Table__wNTq0 {\n    color: royalblue;\n    font-size: 1.5em;\n    font-weight: bold;\n}\n\n.styles_TableSecondary__5FsZZ {\n    color: rebeccapurple;\n    font-size: 1.2em;\n}";
+var styles = {"Table":"styles_Table__wNTq0","TableSecondary":"styles_TableSecondary__5FsZZ"};
 styleInject(css_248z);
 
 var _excluded = ["children", "className", "variant"];
@@ -128,7 +128,7 @@ var Table = function Table(_ref) {
     className = _ref.className,
     variant = _ref.variant,
     rest = _objectWithoutProperties(_ref, _excluded);
-  var classes = clsx(styles.Paragraph, _defineProperty({}, styles.ParagraphSecondary, variant === 'secondary'), className);
+  var classes = clsx(styles.Table, _defineProperty({}, styles.TableSecondary, variant === 'secondary'), className);
   return /*#__PURE__*/React.createElement("p", _extends({}, rest, {
     className: classes
   }), children);

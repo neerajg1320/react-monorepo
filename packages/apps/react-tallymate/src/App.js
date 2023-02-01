@@ -1,7 +1,7 @@
 import './App.css';
 import {Button} from "@glassball/gallery";
 import {Text} from "@glassball/gallery";
-import {TableWrapper} from "@glassball/table";
+import {Table} from "@glassball/table";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <div>
         <Button>Button</Button>
         <Text variant="Hero">Hero Text</Text>
-        <TableWrapper />
+        <Table variant="primary">From Table</Table>
       </div>
     </div>
   );
